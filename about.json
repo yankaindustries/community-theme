@@ -1,0 +1,41 @@
+{
+  "name": "Brand 2.0",
+  "component": false,
+  "license_url": null,
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+  },
+  "color_schemes": {
+    "Brand 2.0": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "f24462",
+      "quaternary": "f24462",
+      "header_background": "ffffff",
+      "header_primary": "222222",
+      "highlight": "CCD5E5",
+      "danger": "ff2a2a",
+      "success": "009900",
+      "love": "ff4f4f"
+    },
+    "Simple Dark": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "c63430",
+      "quaternary": "c63430",
+      "header_background": "ffffff",
+      "header_primary": "222222",
+      "highlight": "ccd5e5",
+      "danger": "be3f3f",
+      "success": "009900",
+      "love": "be3f3f"
+    }
+  },
+  "modifiers": {
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}

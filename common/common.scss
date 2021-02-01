@@ -1,0 +1,70 @@
+.img-left {
+    float: left;
+    width: 33%;
+    height: auto;
+    padding-right: 16px;
+}
+
+.img-right {
+    float: right;
+    width: 33%;
+    height: auto;
+    padding-left: 16px;
+}
+.fa-lock {display:none;}
+.badge-notification{padding: 3px 5px 3px 5px;}
+ul.category-links.clearfix  {display:none;}
+.list-container .subcategories {display:none;}
+// body.navigation-categories .category-description {display:none;}
+.d-icon-lock {display:none;}
+
+.subheader {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+/* Sohne - Light */
+@font-face {
+  font-family: 'Sohne';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Sohne Leicht'), local('Sohne-Leicht'),
+    url('//masterclass.com/fonts/sohne-leicht.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-leicht.woff') format('woff');
+}
+
+/* Sohne - Regular */
+@font-face {
+  font-family: 'Sohne';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Sohne Buch'), local('Sohne-Buch'),
+    url('//masterclass.com/fonts/sohne-buch.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-buch.woff') format('woff');
+}
+
+/* Sohne - Bold */
+@font-face {
+  font-family: 'Sohne';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Sohne Halbfett'), local('Sohne-Halbfett'),
+    url('//masterclass.com/fonts/sohne-halbfett.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-halbfett.woff') format('woff');
+}
+
+/* Sohne - Schmal - Semibold */
+@font-face {
+  font-family: 'Sohne Schmal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Sohne Schmal Dreiviertelfett'), local('Sohne-Schmal-Dreiviertelfett'),
+    url('//masterclass.com/fonts/sohne-schmal-dreiviertelfett.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-schmal-dreiviertelfett.woff') format('woff');
+}

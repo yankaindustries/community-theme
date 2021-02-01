@@ -1,0 +1,288 @@
+/* Fix overflow in safari? */
+/*html {
+    background: black; 
+}*/
+
+#main { background: white; }
+
+.category img {
+    max-width:351px;
+}
+
+a {
+    color: #f24462;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: #f24462;
+}
+
+body {
+    font-family: 'Sohne', 'Helvetica', 'Arial', sans-serif;
+}
+
+body input:focus {
+    border-color: #f24462 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+
+
+.btn {
+    color: #222;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.2);
+
+    &:hover {
+        background: #111111;
+        color: #fff;
+
+        .caret { border-top: 4px solid #fff; }
+    }
+
+    &.btn-primary {
+        border: none;
+        font-weight: normal;
+        color: #fff;
+        background: #f24462;
+    }
+}
+
+.nav-pills {
+    > li {
+        margin: 0;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-left: 0;
+
+        &:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.2);
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        > a {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.035em;
+            transition: background 250ms ease, color 250ms ease;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                color: #000;
+            }
+        }
+
+        &.active {
+            border-color: rgba(0, 0, 0, 0.2);
+
+            a {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+
+nav.post-controls button {
+    &.has-like {
+        color: #f24462;
+    }
+
+    &.create {
+        color: #f24462;
+    }
+}
+
+.unread-private-messages {
+    top: -5px;
+    background: #f24462;
+}
+
+.list-controls {
+    .category-dropdown-menu {
+        padding: 10px;
+    }
+
+    .category-breadcrumb li.bullet>.badge-category {
+        font-size: 0.9em;
+        background-color: #fff !important;
+        border: 1px solid rgba(0,0,0,0.2) !important;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 5px 15px;
+
+        &.home {
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+
+        &.category-dropdown-button {
+            text-align: center;
+            padding: 5px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+    }
+}
+
+
+#topic-title a.edit-topic i {
+    color: rgba(0,0,0,0.4);
+}
+
+.topic-list {
+    > tbody > tr {
+        background: #fff;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
+    }
+
+    button.bulk-select {
+        border: none !important;
+    }
+
+    a.title.visited:not(.badge-notification) {
+        color: #222;
+    }
+}
+
+.drop-down-visible .d-header .icons .active .icon {
+    background: #4D5768;
+    border: 1px solid transparent;
+    border-bottom: none;
+
+    &:after { display: none; }
+}
+
+.dropdown-menu a {
+    padding: 16px;
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.dropdown-menu .disabled > a,
+.dropdown-menu .disabled > a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.menu-panel {
+    padding: 1em;
+}
+
+.menu-panel hr {
+    margin: 0 10px 0 0;
+}
+
+.menu-panel ul.menu-links li a, .menu-panel ul li.heading a {
+    padding: 0.2em 1em;
+}
+
+.menu-panel ul.menu-links li a:hover, .menu-panel ul li.heading a:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.timeline-container .topic-timeline .timeline-handle {
+    background-color: #f24462;
+}
+
+.user-menu .notifications {
+    margin-bottom: 10px;
+}
+
+.user-menu .notifications li {
+    padding: 0.8em 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.user-menu .notifications li:hover {
+    background-color: #555;
+}
+
+.user-menu .notifications li:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.user-menu .notifications .read {
+    background-color: #fff;
+}
+
+div.menu-links-header .fa, div.menu-links-header a {
+    color: #000;
+}
+
+div.menu-links-header a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.alert-too-few-topics {display:none}
+
+#topic-title h1 {
+    margin-bottom: 0.25em;
+}
+
+#suggested-topics {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding-top: 40px;
+}
+
+.category-logo {
+    margin: 2em 2em 1em 0;
+    float: none;
+}
+.d-header #site-logo {
+    &.logo-big {
+        height: 4em;
+    }
+    &.logo-small {
+       height: 2.75em;
+    }
+}
+
+.category-heading > p {
+    max-width: 700px;
+    margin: 1em 0 2em;
+    padding: 0.25em 0.75em;
+    color: #919191;
+    font-size: 1em;
+    border-left: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+// Remove lock icons from main forums and subforums
+.category-list.with-topics .category .ember-view > a > .fa-lock,
+ .category-dropdown-menu.chooser .fa-lock,
+ .menu-panel.drop-down .category-links .fa-lock,
+ .badge-category .fa-lock {
+    display: none;
+} 
+
+// Custom header styles
+#mc-header {
+    background-color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#mc-logo {
+    color: #ffffff;
+}
+
+// Make sure links in category descriptions are clickable
+.category-boxes .description {
+    position: relative;
+}

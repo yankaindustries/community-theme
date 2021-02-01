@@ -1,0 +1,78 @@
+<script src="//fast.appcues.com/25810.js"></script>
+<script src="https://cdn.optimizely.com/js/10430860821.js"></script>
+<script type="text/discourse-plugin" version="0.8.18">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics.integrationOptions=e};analytics.SNIPPET_VERSION="4.0.1";
+    analytics.load("skFpymhfRAXS59SuRtSKZymlzxASx4JO");
+    }}();
+
+    let currentUser = api.getCurrentUser();
+    let userID;
+    let referrer;
+
+    api.onPageChange((url, title) => {
+        let pageType;
+        let realURL = window.location.href;
+        if (url.startsWith('/t')) {
+            pageType = "Hub Topic";
+        } else if (url.startsWith('/c')) {
+            pageType = "Hub Category";
+        }
+ 
+        // identify() will be called when a user logs in, or refreshes the page.
+        if (currentUser && !userID) {
+            api.container.lookup('store:main').find('user', currentUser.username).then((user) => {
+                userID = user.external_id;
+                analytics.identify(userID);
+            });
+        }
+        
+        if (pageType) {
+            analytics.page(pageType, {
+                url: realURL,
+                path: url,
+                referrer: referrer
+            });
+        }
+        referrer = realURL;
+    });
+api.modifyClass('model:composer', {
+    createPost(opts) {
+        const result = this._super(opts);
+        if (result) {
+            result.then((r) => {
+                let json = r.responseJson;
+                if (json && json.post && json.action === 'create_post') {
+                    let topicID = json.post.topic_id;
+                    let topicSlug = json.post.topic_slug;
+                    let postNumber = json.post.post_number;
+                    if (postNumber === 1) {
+                        analytics.track('Hub Topic Created', {
+                            topic_id: topicID,
+                            topic_slug: topicSlug
+                        });
+                    } else {
+                        analytics.track('Hub Post Created', {
+                            topic_id: topicID,
+                            topic_slug: topicSlug,
+                            post_number: postNumber
+                        });
+                    }
+                }
+            });
+        }
+            
+        return result;
+    }
+});
+
+</script>
+<script>
+    $( document ).ready(function() {
+        let subTitle = document.createElement("p")
+        subTitle.className = "subheader"
+        subTitle.innerHTML = "Where students gather and discuss"
+        
+        let navTitle = document.getElementById("site-text-logo")
+        //navTitle.appendChild(subTitle)
+    });
+</script>
